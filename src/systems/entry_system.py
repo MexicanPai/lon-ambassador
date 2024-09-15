@@ -75,7 +75,7 @@ class EntryLogic:
         if entry.is_cancelled():
             raise EntryCancelledError("This entry was already cancelled and cannot be completed!")
         
-        if not entry.is_past_due(2323): # 2323 is just an example. in this case, it would be the current time
+        if not entry.is_past_due(time.time()):
             if not forced:
                 raise EntryDeadlineNotReachedError("This entry did not reach its deadline yet")
             self._repository.mark_as_completed(id, early=True)
