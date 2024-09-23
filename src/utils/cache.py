@@ -13,5 +13,5 @@ class Cache:
     def clear_cache(self, arg = None):
         if arg is None:
             self._cache.clear()
-        else:
+        elif arg in self._cache:
             del self._cache[arg]

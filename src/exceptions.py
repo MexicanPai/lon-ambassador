@@ -2,6 +2,14 @@ class AmbassadorError(Exception):
     """Base class for all Ambassador related exceptions."""
     pass
 
+class AmbassadorInvalidStateError(AmbassadorError):
+    """Raised when there was an invalid state"""
+
+class AmbassadorLogicAlreadyRegisteredError(AmbassadorError):
+    """Raised when there was an attempt to register a logic class to an already registered type"""
+
+class AmbassadorOperationNotSupportedError(AmbassadorError):
+    """Raised when an unsupported operation is attempted on a given entry"""
 class EntryError(AmbassadorError):
     """Base class for all entry related exceptions."""
     pass
